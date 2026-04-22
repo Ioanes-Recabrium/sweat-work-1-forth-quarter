@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="div">
+        <h1>Login</h1>
+        <p>Please input your password. AND. ALSO YOUR USERNAME.</p>
+
+        <label>username</label>
+        <input type="text" id="username">
+
+        <label>password</label>
+        <input type="password" id="password">
+        <br><button onclick="index()">Login</button>
+    </div>
+    <div class="div">
+        forgot your password/username? too bad. the user and pass are Billy Jeans btw
+    </div>
+    <script>
+    let attempt = 0; /*im not really going to use loops for this one, i found them extremely cumbersome to code. loops apparently dont wait for me (the user) to type on the html inputs*/
+    let maxattempt = 3;
+
+    function index(){
+    let correctuser = "Billy Jeans"
+    let correctpass = "Billy Jeans"
+    let username = document.getElementById("username").value;
+    let password = document.getElementById("password").value;
+    if(username===correctuser && password===correctpass){
+        alert("Damn right!");
+    } else{
+        attempt++;
+        if(attempt === maxattempt){
+            alert("Account locked.")
+        } else{
+            alert("You have " + (maxattempt - attempt) + " tries left.");
+        }
+    }
+}
+    </script>
+</body>
+</html>
